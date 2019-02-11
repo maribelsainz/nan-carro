@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+​
+<h1>Products</h1>
+​
+<div class="row">
+ <% @products.each do |product| %>
+  <div class="card col-sm-3 text-center">
+   <img class="card-img-top img-fluid" src="<%= product.photo %>" alt="Card image cap">
+   <div class="card-body">
+    <h5 class="card-title"><%= product.name %></h5>
+    <h6 class="card-title">$<%= product.price %></h6>
+    <%= link_to 'Add to Cart', product_orders_path(product), class: 'btn btn-primary', method: :post %>
+   </div>
+  </div>
+ <% end %>
+</div>
+
+
+
+
+
+
